@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/d8f2b41735.js" crossorigin="anonymous"></script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    <title>Crud JavaScript</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="img/custom_coding_programming_development_icon_192470.png"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Enlaces</a>
+              </li>
+              <li class="nav-dropdown">
+                
+                
+              </li>
+              
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="">
+              <button class="btn btn-outline-ligth" type="submit"> <i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+          </div>
+        </div>
+      </nav>
+ </br>
+</br>      
+    <div class="container">
+      <div class="row">
+       <div class="card-content"> 
+          <div class="col-12">
+           <div class="card-title text-center"> 
+             <h2>Crud JavaScript <i class="fa-sharp fa-solid fa-cube"></i></h2>
+            </div> 
+            <div class="card-content ">
+              <form> 
+                <div class="col-md-11">
+                  <label for="validationCustom01" class="form-label">Nombre <i class="fa-solid fa-user">_______________________________</i></label>
+                  <input type="text" class="form-control" id="nombre" value="" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <label for="validationCustom02" class="form-label">Edad <i class="fa-solid fa-cake-candles">___________________</i></label>
+                  <input type="number" class="form-control" id="edad" value="Otto" required>
+                  
+                </div>
+                <div class="col-md-11">
+                    <label for="validationCustom01" class="form-label">Dirreccion <i class="fa-solid fa-house"></i>_____________________________________</label>
+                    <input type="text" class="form-control" id="dirreccion" value="" required>
+                    
+                  </div>
+                <div class="col-md-11">
+                  <label for="validationCustomUsername" class="form-label">Correo <i class="fa-sharp fa-solid fa-user-group">__________________________________________</i></label>
+                  <div class="input-group has-validation">
+                    <input type="email" class="form-control" id="email" aria-describedby="inputGroupPrepend" required>
+                   
+                  </div>
+                </div>
+            </br>
+                <div class="col-lg-12 mt-5">
+                  <button class="btn btn-success" id="submit" onclick="AddData()">Agregar <i class="fa-solid fa-circle-plus"></i></button>
+                  <button class="btn btn-primary" id="update">Actualizar <i class="fa-solid fa-file"></i></button>
+                </div>
+              </form>
+          </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12">
+                <table class="table table-bordered text-center" id="crudTable">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Edad</th>
+                            <th>Dirreccion</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <script src="script.js"></script>
+
+        <style>
+          body {
+            background-color: #825688b2;
+          }
+          *{
+            color:rgb(16, 17, 17);
+          }
+          #update{
+              display:none;
+          }
+          h2{
+            color:rgb(46, 165, 165);
+          }
+          input{
+            width:100%;
+            height:100%;
+            border:1px solid #2b2828;
+            border-radius:5px;
+            padding:5px;
+            margin:5px;
+            font-weight:bold;
+            font-size:12px;
+            font-weight:bold;
+            border-radius:5px;
+            border:1px solid #2b282828;
+            background-color: #2b282828;
+            border-color: #2b282828;
+          }
+          input:hover{
+            background-color: #376692a6;
+            border-color: #3f7dda28;
+          }
+          input:active{
+            background-color: #1cdd2ca6;
+            border-color: #3f7dda28;
+
+          }
+          table{
+            width:50%;
+            height:70%;
+            border-collapse:collapse;
+            border-spacing:0;
+          }
+          td{
+            padding:5px;
+            text-align:center;
+            font-weight:bold;
+            font-size:16px;
+            color:rgb(5, 5, 5);
+            border-radius:5px;
+          }
+          tbody{
+            width:70%;
+            height:70%;
+            border-collapse:collapse;
+            border-spacing:0;
+          }
+          tr{
+            padding:5px;
+            text-align:center;
+            font-weight:bold;
+            font-size:16px;
+            color:rgb(5, 5, 5);
+            border-radius:5px;
+            border-style:solid;
+            border-width:1px;
+
+          }
+        </style>
+        <div class="container">
+        </div>
+  </body>
+</html>
